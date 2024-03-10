@@ -168,6 +168,18 @@ display: grid;
 
 `
 
+const StyledNavigateLink = styled(Link)`
+text-decoration: none;
+color: black;
+
+&:hover{
+  text-decoration: none;
+  color: black;
+}
+
+
+`
+
 
 const MenTshirts = () => {
   
@@ -192,6 +204,8 @@ const MenTshirts = () => {
        <MenCollections>
        {MenShirts.map((shirt, index) => (
         <div key={index} style={{ background: 'whitesmoke',  cursor: 'pointer' }}>
+          <StyledNavigateLink key={index} to={`/shop/product/${shirt.id}`} >
+            
           <img className='womenshop-tshirt-img' src={shirt.shirtImage} alt={shirt.id} />
           <p className='womenshop-tshirt-gender'>{shirt.gender}</p>
           <h4 className='womenshop-tshirt-name'>{shirt.shirt}</h4>
@@ -199,17 +213,18 @@ const MenTshirts = () => {
           <div className="womenshop-tshirt-color">
             {shirt.colors.map((color, colorIndex) => (
               <div
-                key={colorIndex}
-                className="womenshop-color-option"
-                style={{ backgroundColor: color }}
+              key={colorIndex}
+              className="womenshop-color-option"
+              style={{ backgroundColor: color }}
               />
-            ))}
+              ))}
           </div>
           <div className="womenshop-tshirt-size">
             {shirt.size.map((size, sizeIndex) => (
               <button key={sizeIndex}>{size}</button>
-            ))}
+              ))}
           </div>
+              </StyledNavigateLink>
         </div>
       ))}
 

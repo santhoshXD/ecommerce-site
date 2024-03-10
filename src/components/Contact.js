@@ -24,7 +24,7 @@ height: 90%;
   display: flex;
   flex-wrap: wrap;
   height: 80%;
-  background: linear-gradient(to right,#f3f1f6 60%, white 40%);
+  background: linear-gradient(to right,#f3f1f6 70%, white 40%);
 
   @media screen and (max-width: 768px){
     display: flex;
@@ -33,27 +33,30 @@ height: 90%;
 
 
   .get-in-touch{
-    
+    width: 50%;
     flex: 1 0 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    padding-left: 1rem;
+  
 
     @media screen and (max-width: 768px){
-   
+    padding-left: 0;
+    width: auto;
 
      }
     
   }
 
   .about-form{
-   
+    width: 50%;
     flex: 1 0 1;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-
+    justify-content: center;
+ 
 
     .names{
       display: flex;
@@ -62,6 +65,7 @@ height: 90%;
       @media screen and (max-width: 768px){
         display: flex;
         flex-direction: column;
+         width: auto;
         
       }
     }
@@ -77,6 +81,8 @@ height: 90%;
         height: 2.5rem;
         border: 2px solid lightgrey;
         outline: none;
+        padding-left: 10px;
+        color:  gray;
 
         &:focus{
           border: 3px solid grey;
@@ -93,6 +99,8 @@ height: 90%;
       textarea{
         border: 2px solid lightgrey;
         outline: none;
+        padding-left: 10px;
+        color: grey;
 
         &:focus{
           border: 3px solid grey;

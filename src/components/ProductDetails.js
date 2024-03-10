@@ -38,32 +38,45 @@ const Description = styled.div`
   .description-img{
      
 
+
+    .main-product{
+
+    }
       
+    img{
 
-
-     img{
-
-      width: 100%;
-      height: 600px;
-       
-      &:hover{
-       
-        cursor: zoom-in;
-      }
+     width: 100%;
+     height: 600px;
+      
+     &:hover{
+      
+       cursor: zoom-in;
      }
+    }
+
+
   }
 
   .extra-images{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    grid-gap: 10px;
-    place-items: center;
-    padding-top: 10px;
+ 
+    display: flex;
     justify-content: center;
-     
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    height: calc(100% - 600px);
+ 
+    
     img{
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
+      cursor: pointer !important;
+    }
+    
+    @media screen and (max-width: 768px){
+      grid-gap: 10px;
+      padding-top: 10px;
+
     }
   }
 
@@ -241,6 +254,8 @@ const ProductDetails = () => {
   };
 
 
+  const[selectedImage, setSelectedImage] = useState(product.shirtImage)
+
 
 
   return (
@@ -249,17 +264,18 @@ const ProductDetails = () => {
 
       <Description>
         <div className="description-img">
-          <div>
+          <div main-product >
 
-          <img src={process.env.PUBLIC_URL + '/' + product.shirtImage} alt={product.shirt} />
+          <img src={process.env.PUBLIC_URL + '/' + selectedImage} alt={product.shirt} />
           </div>
 
           <div className='extra-images'>
              {
               product.extraImages.map((image,index) =>(
-                <img src={process.env.PUBLIC_URL + '/' + image} />
+                <img key={index} src={process.env.PUBLIC_URL + '/' + image}  onClick={() => setSelectedImage(image)} />
               ))
              }
+             <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora veritatis nostrum ducimus ut earum magni alias unde quis dolorem adipisci obcaecati vero blanditiis architecto quod nobis aperiam, inventore eaque sed.</div>
           </div>
 
 

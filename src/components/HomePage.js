@@ -16,6 +16,7 @@ const Wrapper = styled.div`
 width: 100vw;
 height: 100vh;
 overflow: auto;
+position: relative;
 
 ::selection{
   background: black;
@@ -29,8 +30,8 @@ height: 90vh;
 background: #f3f1f6;
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
-
-
+background: radial-gradient(circle at 75% 40%, #1d71b9 20%, white 20%);
+box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 
 
 
@@ -91,6 +92,7 @@ grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   display: grid;
   grid-template-columns: 1fr;
   text-align: justify;
+  background: radial-gradient(circle at 50% 50%, #1d71b9 43%, white 43%);
 }
 `
 
@@ -632,6 +634,18 @@ color: black;
 }
 `
 
+const StyledNavigateLink = styled(Link)`
+text-decoration: none;
+color: black;
+
+&:hover{
+  text-decoration: none;
+  color: black;
+}
+
+
+`
+
 
 export default function HomePage() {
 
@@ -695,6 +709,8 @@ export default function HomePage() {
           {
             PopularShirtsDisplay.map((shirts, index) => (
               <div key={index} style={{background:'whitesmoke',cursor:'pointer'}}>
+                 <StyledNavigateLink key={index} to={`/shop/product/${shirts.id}`} >
+
                 <img className='popular-tshirt-img' src={shirts.shirtImage} alt={shirts.id} />
                 <p className='popular-tshirt-gender'>{shirts.gender}</p>
                 <h4 className='popular-tshirt-name'>{shirts.shirt}</h4>
@@ -702,17 +718,18 @@ export default function HomePage() {
                 <div className="popular-tshirt-color">
                 {shirts.colors.map((color, index) => (
                   <div
-                    key={index}
-                    className="color-option"
-                    style={{ backgroundColor: color }}
+                  key={index}
+                  className="color-option"
+                  style={{ backgroundColor: color }}
                   />
-                ))}
+                  ))}
               </div>
               <div className="popular-tshirt-size">
           {shirts.size.map((size, index) => (
             <button  key={index}>{size}</button>
-          ))}
+            ))}
         </div>
+            </StyledNavigateLink>
               </div>
             ))
           }
@@ -770,6 +787,8 @@ export default function HomePage() {
 
       {OnShirtsDisplay.map((shirt, index) => (
         <div key={index} style={{ background: 'whitesmoke',cursor:'pointer' }}>
+           <StyledNavigateLink key={index} to={`/shop/product/${shirt.id}`} >
+
           <img className='OnSale-tshirt-img' src={shirt.shirtImage} alt={shirt.id} />
           <p className='OnSale-tshirt-gender'>{shirt.gender}</p>
           <h4 className='OnSale-tshirt-name'>{shirt.shirt}</h4>
@@ -777,17 +796,18 @@ export default function HomePage() {
           <div className="OnSale-tshirt-color">
             {shirt.colors.map((color, colorIndex) => (
               <div
-                key={colorIndex}
-                className="color-option"
-                style={{ backgroundColor: color }}
+              key={colorIndex}
+              className="color-option"
+              style={{ backgroundColor: color }}
               />
-            ))}
+              ))}
           </div>
           <div className="OnSale-tshirt-size">
             {shirt.size.map((size, sizeIndex) => (
               <button  key={sizeIndex}>{size}</button>
             ))}
           </div>
+              </StyledNavigateLink>
         </div>
       ))}
       </div>``

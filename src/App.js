@@ -7,6 +7,7 @@ import MenTshirt from "./components/MenTshirt";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ProductDetails from "./components/ProductDetails";
+import LoginPage from "./components/LoginPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
   <Route path="/about" element={<About />} />
   <Route path="/contact" element={<Contact />} />
   <Route path="/shop/product/:id" element={<ProductDetails />} />
+  <Route path="/login" element={<LoginPage/>}/>
 
   </Routes>
   

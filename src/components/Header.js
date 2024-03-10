@@ -4,7 +4,7 @@ import data from '../JSON/header.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faCartShopping, faClose, faSearch } from '@fortawesome/free-solid-svg-icons'
 import tshirts from '../Brand/Tshirts.webp'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const { menu1, menu2,mobilemenu1 } = data
 
@@ -214,6 +214,77 @@ height: 3rem;
 
 `
 
+const CartMenu = styled.div`
+position: absolute;
+top: 0;
+  right: ${props => props.isCartOpen ? '0' : '-300px'};
+  background: white;
+  width: 25%;
+  height: 100vh;
+  transition: all 0.3s ease;
+  border-left: 2px solid lightgray;
+ 
+  
+
+.title-cart{
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+
+  div{
+    text-transform: uppercase;
+    font-size: small;
+    font-weight: 500;
+  }
+}
+
+.cart-items{
+ height: 80%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ text-transform: capitalize;
+
+}
+
+.cart-shopping{
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     
+  
+}
+
+@media screen and (max-width: 768px){
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    width: 100%;
+}
+
+`
+
+const StyledNavigateLink = styled(Link)`
+        color: white;
+        background: black;
+ 
+        width: 80%;
+        height: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        &:hover{
+            text-decoration: none;
+            color: white;
+        }
+`
+
 export default function Header() {
 
     const [isOpen, setIsOpen] = useState(false)
@@ -229,6 +300,23 @@ export default function Header() {
         
     };
 
+    const Navigate = useNavigate()
+
+    const LinkToLoginPage = () =>{
+       Navigate('/login')
+    }
+
+
+    const [isCartOpen, setIsCartOpen] = useState(false)
+
+    const openCart = () =>{
+        setIsCartOpen(true)
+        console.log("cart is clicked")
+    }
+
+    const closeCart = () =>{
+        setIsCartOpen(false)
+    }
   return (
     <Wrapper className='container-fluid'>
        <div className="menu1">
@@ -240,22 +328,50 @@ export default function Header() {
                 ))
              }
        </div>
-
+       
        <div className="brand">
-           <img src='logo.png' alt="t-shirt" />
+           <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Logo" />
+
        </div>
 
        <div className="menu2">
        {
                 menu2.map((items,index) =>(
                    
-                    <FontAwesomeIcon  key={index} className={items.id === 1 ? 'search-icon' : 'cart-icon'} icon={items.id === 1 ? faSearch : faCartShopping} />
+                    <FontAwesomeIcon  key={index} className={items.id === 1 ? 'search-icon' : 'cart-icon'} icon={items.id === 1 ? faSearch : faCartShopping} 
+                    onClick={items.id  === 2 ? openCart : null}
+                    />
                        
                 ))
              }
-             <button>LOG IN</button>
+             <button onClick={LinkToLoginPage} >LOG IN</button>
 
        </div>
+
+
+       {
+        isCartOpen && 
+
+        <CartMenu isCartOpen={isCartOpen}>
+            <div className="title-cart">
+
+                <div>shopping cart</div>
+                <FontAwesomeIcon style={{cursor:'pointer', fontSize:'1.5rem'}} onClick={closeCart} icon={faClose}/>
+            </div>
+            <hr />
+
+
+            <div className="cart-items">
+                <div>No Products in the cart</div>
+            </div>
+
+
+            <div className="cart-shopping">
+                 <StyledNavigateLink to={'/shop'} >Continue Shopping </StyledNavigateLink> 
+            </div>
+        </CartMenu>
+        
+       }
 
 { isOpen && 
 
@@ -274,6 +390,9 @@ export default function Header() {
 
       </MobileMenu>
 }
+
+
+
         
     </Wrapper>
   )
