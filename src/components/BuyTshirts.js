@@ -102,15 +102,15 @@ height: auto;
   
 }
 
-.OnSale-tshirt-name{
+.shop-tshirt-name{
   cursor: pointer;
 }
 
-.OnSale-tshirt-color{
+.shop-tshirt-color{
   cursor: pointer;
 }
 
-.OnSale-tshirt-gender{
+.shop-tshirt-gender{
   text-transform: uppercase;
   font-size: smaller;
   color: grey;
@@ -225,7 +225,7 @@ const BuyTshirts = () => {
       <div key={index} style={{ background: 'whitesmoke',  cursor: 'pointer' }} >
           <StyledNavigateLink key={index} to={`/shop/product/${shirt.id}`} >
           <img className='shop-tshirt-img'  src={process.env.PUBLIC_URL + '/' + shirt.shirtImage} alt={shirt.id} />
-          <p className='shop-tshirt-gender'>{shirt.gender}</p>
+          <p  className='shop-tshirt-gender'>{shirt.gender}</p>
           <h4 className='shop-tshirt-name'>{shirt.shirt}</h4>
           <p className='shop-tshirt-price'>{shirt.price}</p>
             </StyledNavigateLink>

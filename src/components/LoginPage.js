@@ -147,6 +147,9 @@ export default function LoginPage() {
     const[userPassword,setUserPassword] = useState('santhosh123')
     const[error,setError] = useState(null)
 
+    
+
+
    const Navigate = useNavigate()
    const handleLogin = () => {
     if (username === '' || userPassword === '') {
@@ -155,7 +158,9 @@ export default function LoginPage() {
         if (username !== 'santhosh123@gmail.com' || userPassword !== 'santhosh123') {
             setError('Please enter correct username and password');
         } else {
-            Navigate('/'); 
+            Navigate('/');
+            localStorage.setItem('username',username)
+            localStorage.setItem('userpassword',userPassword) 
         }
     }
 }

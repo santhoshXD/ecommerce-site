@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import BuyTshirts from "./components/BuyTshirts";
@@ -8,10 +7,23 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import ProductDetails from "./components/ProductDetails";
 import LoginPage from "./components/LoginPage";
+import { createGlobalStyle } from "styled-components";
+
+
+const GlobalStyle = createGlobalStyle`
+ 
+ body{
+  font-family: "Dosis", sans-serif;
+ 
+ }
+
+`
 
 function App() {
+
   return (
   <>
+  <GlobalStyle/>
   <BrowserRouter>
   <Routes>
   <Route path="/" element={<HomePage />} />
@@ -22,11 +34,8 @@ function App() {
   <Route path="/contact" element={<Contact />} />
   <Route path="/shop/product/:id" element={<ProductDetails />} />
   <Route path="/login" element={<LoginPage/>}/>
-
   </Routes>
-  
   </BrowserRouter>
-
   </>
   );
 }

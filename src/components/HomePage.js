@@ -680,7 +680,8 @@ export default function HomePage() {
   const OnShirtsDisplay = Allshirts.filter(items => items.category === 'onsale')
 
 
- 
+
+
   return (
     <Wrapper className='container-fluid' >
       <Header />

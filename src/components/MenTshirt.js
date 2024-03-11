@@ -102,15 +102,15 @@ display: grid;
   
 }
 
-.OnSale-tshirt-name{
+.womenshop-tshirt-name{
   cursor: pointer;
 }
 
-.OnSale-tshirt-color{
+.womenshop-tshirt-color{
   cursor: pointer;
 }
 
-.OnSale-tshirt-gender{
+.womenshop-tshirt-gender{
   text-transform: uppercase;
   font-size: smaller;
   color: grey;

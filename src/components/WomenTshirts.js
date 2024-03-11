@@ -93,24 +93,26 @@ display: grid;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
   }
 
+  
 
 
 
 
 .womenshop-tshirt-name,.womenshop-tshirt-color,.womenshop-tshirt-gender{
   margin:1px;
+ 
   
 }
 
-.OnSale-tshirt-name{
+.womenshop-tshirt-name{
   cursor: pointer;
 }
 
-.OnSale-tshirt-color{
+.womenshop-tshirt-color{
   cursor: pointer;
 }
 
-.OnSale-tshirt-gender{
+.womenshop-tshirt-gender{
   text-transform: uppercase;
   font-size: smaller;
   color: grey;

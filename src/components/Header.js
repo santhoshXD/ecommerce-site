@@ -318,6 +318,20 @@ export default function Header() {
     const closeCart = () =>{
         setIsCartOpen(false)
     }
+
+    
+  const[loggedIn, setLoggedIn] = useState(false)
+
+  useEffect(() => {
+    const username = localStorage.getItem('username')
+     const password = localStorage.getItem('userpassword')
+
+
+     if(username && password ){
+      setLoggedIn(true)
+     }
+    
+  },[])
   return (
     <Wrapper className='container-fluid'>
        <div className="menu1">
@@ -345,7 +359,14 @@ export default function Header() {
                        
                 ))
              }
-             <button onClick={LinkToLoginPage} >LOG IN</button>
+             {
+                loggedIn ? (
+                    <button>LOGOUT</button>
+                    
+                    ) : (
+                    <button onClick={LinkToLoginPage} >LOG IN</button>
+                )
+             }
 
        </div>
 
