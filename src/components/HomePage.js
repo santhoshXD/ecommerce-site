@@ -281,7 +281,7 @@ width: 100%;
 const NewCollection = styled.div`
   width: 100%;
   height: 80vh;  
-  background: url('newcollection1.avif');
+  background: url(${process.env.PUBLIC_URL}/newcollection1.avif);
   background-repeat: no-repeat;
   background-size: cover;  
   background-attachment: fixed;  
@@ -711,11 +711,11 @@ export default function HomePage() {
               <div key={index} style={{background:'whitesmoke',cursor:'pointer'}}>
                  <StyledNavigateLink key={index} to={`/shop/product/${shirts.id}`} >
 
-                <img className='popular-tshirt-img' src={shirts.shirtImage} alt={shirts.id} />
+                <img className='popular-tshirt-img' src={process.env.PUBLIC_URL + '/' + shirts.shirtImage} alt={shirts.id} />
                 <p className='popular-tshirt-gender'>{shirts.gender}</p>
                 <h4 className='popular-tshirt-name'>{shirts.shirt}</h4>
                 <p className='popular-tshirt-price'>{shirts.price}</p>
-                <div className="popular-tshirt-color">
+                <div className="popular-tshirt-color">  
                 {shirts.colors.map((color, index) => (
                   <div
                   key={index}
@@ -739,7 +739,7 @@ export default function HomePage() {
       <ShowPage>
         
          <div className="showtshirt1">
-            <img className=' Page3Tshirt1' src="Page3Tshirt1.avif" alt="Page3Tshirt1" />
+            <img className=' Page3Tshirt1' src={process.env.PUBLIC_URL + '/Page3Tshirt1.avif'} alt="Page3Tshirt1" />
             <p style={{color:"grey" ,fontWeight:'500',paddingTop:'1rem'}}>MEN  WOMEN</p>
             <p style={{fontSize:'1.5rem',fontWeight:'200'}} >Fashion is what you buy, style is what you do with it.</p>
             <button >Shop Now</button>
@@ -747,7 +747,7 @@ export default function HomePage() {
 
 
          <div className="showtshirt2">
-             <img className=' Page3Tshirt2' src="Page3Tshirt2.avif" alt="Page3Tshirt2" />
+             <img className=' Page3Tshirt2' src={process.env.PUBLIC_URL + '/Page3Tshirt2.avif'} alt="Page3Tshirt2" />
          </div>
 
       </ShowPage>
@@ -766,7 +766,7 @@ export default function HomePage() {
 
       <SummerBanner>
          <div className="summer-banner-pose">
-          <img src="https://images.unsplash.com/photo-1503342394128-c104d54dba01?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="summer-banner-pose" />
+          <img src={process.env.PUBLIC_URL + '/springsummer.avif'} alt="summer-banner-pose" />
          </div>
 
 
@@ -789,7 +789,7 @@ export default function HomePage() {
         <div key={index} style={{ background: 'whitesmoke',cursor:'pointer' }}>
            <StyledNavigateLink key={index} to={`/shop/product/${shirt.id}`} >
 
-          <img className='OnSale-tshirt-img' src={shirt.shirtImage} alt={shirt.id} />
+          <img className='OnSale-tshirt-img' src={process.env.PUBLIC_URL + '/' + shirt.shirtImage} alt={shirt.id} />
           <p className='OnSale-tshirt-gender'>{shirt.gender}</p>
           <h4 className='OnSale-tshirt-name'>{shirt.shirt}</h4>
           <p className='OnSale-tshirt-price'>{shirt.price}</p>
@@ -836,7 +836,7 @@ export default function HomePage() {
       <Products >
 
       <div className="mens-product" onMouseEnter={hoverMenProductEnter} onMouseLeave={hoverMenProductLeave}>
-        <img className='men-pro-img' src="mens-product.avif" alt="mens-product" />
+        <img className='men-pro-img' src={process.env.PUBLIC_URL + '/mens-product.avif'} alt="mens-product" />
         <div className='menprod'>
         <StyledLink to="/men-tshirts">
           <p style={{ padding: '0', margin: '0', fontWeight: '500' }}>MEN</p>
@@ -847,7 +847,7 @@ export default function HomePage() {
       </div>
 
       <div className="womens-product" onMouseEnter={hoverWomenProductEnter} onMouseLeave={hoverWomenProductLeave}>
-        <img className='women-pro-img' src="womens-product.avif" alt="womens-product" />
+        <img className='women-pro-img' src={process.env.PUBLIC_URL + '/womens-product.avif'} alt="womens-product" />
         <div className='womenprod'>
           <StyledLink to='/women-tshirts'>
           <p style={{ padding: '0', margin: '0', fontWeight: '500' }}>WOMEN</p>

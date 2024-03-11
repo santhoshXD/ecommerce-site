@@ -227,9 +227,10 @@ top: 0;
   
 
 .title-cart{
+ 
     height: 5%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     padding: 15px;
 

@@ -1,6 +1,7 @@
-import { faEnvelope,faLock, faSignIn } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope,faEye,faEyeSlash,faLock, faSignIn } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 
@@ -55,6 +56,10 @@ gap: 1rem;
         height: 100%;
         padding-left: 1rem;
         background: transparent;
+    }
+
+    .pass-icon{
+        padding-right: 1rem;
     }
 }
 
@@ -115,13 +120,59 @@ text-align: center;
 }
 `
 
+const NavigateLoginShop = styled(Link)`
+display: flex;
+justify-content: center;
+align-items: center;
+background: none;
+        border: none;
+        outline: none;
+        color: white;
+        font-weight: 400;
+        width: 100%;
+        height: 100%;
+
+
+        &:hover{
+            text-decoration: none;
+            color: lightgrey;
+        }
+
+`
+
 
 export default function LoginPage() {
+
+    const[username,setUserName] = useState('santhosh123@gmail.com')
+    const[userPassword,setUserPassword] = useState('santhosh123')
+    const[error,setError] = useState(null)
+
+   const Navigate = useNavigate()
+   const handleLogin = () => {
+    if (username === '' || userPassword === '') {
+        setError('Please enter both username and password');
+    } else {
+        if (username !== 'santhosh123@gmail.com' || userPassword !== 'santhosh123') {
+            setError('Please enter correct username and password');
+        } else {
+            Navigate('/'); 
+        }
+    }
+}
+
+const [showpass,setShowPass] = useState(false)
+
+const ShowPassWord = () =>{
+    setShowPass(!showpass)
+}
+
+
     return (
         <Wrapper>
 
             <ShoppingImage>
-                <img src="LoginImage.jpg" alt="" />
+            <img src={process.env.PUBLIC_URL + '/LoginImage.jpg'} alt="" />
+
 
             </ShoppingImage>
 
@@ -132,21 +183,27 @@ export default function LoginPage() {
 
                 <div className="input-login">
                     <FontAwesomeIcon icon={faEnvelope}/>
-                    <input type="text"  placeholder='username' />
+                    <input type="email"  placeholder='username' value={username} onChange={(e) => { setUserName(e.target.value); console.log(e.target.value) }}
+ />
                 </div>
 
                 
                 <div className="input-login">
                     <FontAwesomeIcon icon={faLock}/>
-                    <input type="password"  placeholder='password' />
+                    <input type={showpass ? 'text' : 'password'}  placeholder='password'  value={userPassword}  onChange={(e) => {setUserPassword(e.target.value); console.log(e.target.value) }}/>
+                    <FontAwesomeIcon className='pass-icon' onClick={ShowPassWord}  icon={showpass ? faEye : faEyeSlash}/>
                 </div>
 
                 <div className="forgetpassword">
                     <a href='#'>Forget Password?</a>
+                     
+                </div>
+                <div className="error-login">
+                    <p>{error}</p>
                 </div>
 
                 <div className="button-login">
-                      <button>Submit</button>
+                      <NavigateLoginShop onClick={handleLogin} to={'/'} >Submit</NavigateLoginShop>
                       <FontAwesomeIcon style={{paddingRight:'1rem'}}  icon={faSignIn}/>
                 </div>
 

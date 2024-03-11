@@ -39,7 +39,7 @@ P{
 
 
 const AboutImage = styled.div`
-background: url('about-image.avif');
+background: url(${process.env.PUBLIC_URL}/about-image.avif);
 background-repeat: no-repeat;
 background-size: cover;  
 background-attachment: fixed;

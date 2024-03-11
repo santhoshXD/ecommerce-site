@@ -206,7 +206,7 @@ const WomenTshirts = () => {
         <div key={index} style={{ background: 'whitesmoke',  cursor: 'pointer' }}>
            <StyledNavigateLink key={index} to={`/shop/product/${shirt.id}`} >
 
-          <img className='womenshop-tshirt-img' src={shirt.shirtImage} alt={shirt.id} />
+          <img className='womenshop-tshirt-img'  src={process.env.PUBLIC_URL + '/' + shirt.shirtImage} alt={shirt.id} />
           <p className='womenshop-tshirt-gender'>{shirt.gender}</p>
           <h4 className='womenshop-tshirt-name'>{shirt.shirt}</h4>
           <p className='womenshop-tshirt-price'>{shirt.price}</p>
