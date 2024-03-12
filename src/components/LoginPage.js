@@ -1,4 +1,4 @@
-import { faEnvelope,faEye,faEyeSlash,faLock, faSignIn } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faEye, faEyeSlash, faLock, faSignIn, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
@@ -60,6 +60,7 @@ gap: 1rem;
 
     .pass-icon{
         padding-right: 1rem;
+        cursor: pointer;
     }
 }
 
@@ -140,43 +141,57 @@ background: none;
 
 `
 
+ 
+
 
 export default function LoginPage() {
 
-    const[username,setUserName] = useState('santhosh123@gmail.com')
-    const[userPassword,setUserPassword] = useState('santhosh123')
-    const[error,setError] = useState(null)
+    const [username, setUserName] = useState('santhosh123@gmail.com')
+    const [userPassword, setUserPassword] = useState('santhosh123')
+    const [error, setError] = useState(null)
+
+
+    const [showpass, setShowPass] = useState(false)
+ 
+
+    const ShowPassWord = () => {
+        setShowPass(!showpass)
+    }
 
     
 
 
-   const Navigate = useNavigate()
-   const handleLogin = () => {
-    if (username === '' || userPassword === '') {
-        setError('Please enter both username and password');
-    } else {
-        if (username !== 'santhosh123@gmail.com' || userPassword !== 'santhosh123') {
-            setError('Please enter correct username and password');
+
+    const Navigate = useNavigate()
+    const handleLogin = () => {
+        if (username === '' || userPassword === '') {
+            setError('Please enter both username and password');
         } else {
-            Navigate('/');
-            localStorage.setItem('username',username)
-            localStorage.setItem('userpassword',userPassword) 
+            if (username !== 'santhosh123@gmail.com' || userPassword !== 'santhosh123') {
+                setError('*Please enter correct username and password*');
+            } else {
+                Navigate('/');
+                localStorage.setItem('username', username)
+                localStorage.setItem('userpassword', userPassword)
+            }
         }
     }
-}
 
-const [showpass,setShowPass] = useState(false)
 
-const ShowPassWord = () =>{
-    setShowPass(!showpass)
-}
+    function handleKeyPress(event){
+       if(event.key === 'Enter'){
+        Navigate('/')
+       }
+    }
+
+
 
 
     return (
         <Wrapper>
 
             <ShoppingImage>
-            <img src={process.env.PUBLIC_URL + '/LoginImage.jpg'} alt="" />
+                <img src={process.env.PUBLIC_URL + '/LoginImage.jpg'} alt="" />
 
 
             </ShoppingImage>
@@ -187,32 +202,33 @@ const ShowPassWord = () =>{
 
 
                 <div className="input-login">
-                    <FontAwesomeIcon icon={faEnvelope}/>
-                    <input type="email"  placeholder='username' value={username} onChange={(e) => { setUserName(e.target.value); console.log(e.target.value) }}
- />
+                    <FontAwesomeIcon icon={faEnvelope} />
+                    <input type="email" placeholder='username' value={username} onChange={(e) => { setUserName(e.target.value); console.log(e.target.value) }}
+                    />
                 </div>
 
-                
+
                 <div className="input-login">
-                    <FontAwesomeIcon icon={faLock}/>
-                    <input type={showpass ? 'text' : 'password'}  placeholder='password'  value={userPassword}  onChange={(e) => {setUserPassword(e.target.value); console.log(e.target.value) }}/>
-                    <FontAwesomeIcon className='pass-icon' onClick={ShowPassWord}  icon={showpass ? faEye : faEyeSlash}/>
+                    <FontAwesomeIcon icon={faLock} />
+                    <input type={showpass ? 'text' : 'password'} placeholder='password' value={userPassword} onChange={(e) => { setUserPassword(e.target.value); console.log(e.target.value) } } onKeyPress={handleKeyPress} />
+                    <FontAwesomeIcon className='pass-icon' onClick={ShowPassWord} icon={showpass ? faEye : faEyeSlash} />
                 </div>
 
                 <div className="forgetpassword">
                     <a href='#'>Forget Password?</a>
-                     
+
                 </div>
                 <div className="error-login">
-                    <p>{error}</p>
+                    <p style={{color:'red',fontWeight:'500'}}>{error}</p>
                 </div>
 
                 <div className="button-login">
-                      <NavigateLoginShop onClick={handleLogin} to={'/'} >Submit</NavigateLoginShop>
-                      <FontAwesomeIcon style={{paddingRight:'1rem'}}  icon={faSignIn}/>
+                    <button onClick={handleLogin}  >Submit</button>
+                    <FontAwesomeIcon style={{ paddingRight: '1rem' }} icon={faSignIn} />
                 </div>
 
             </LoginForm>
+ 
         </Wrapper>
     )
 }

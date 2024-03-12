@@ -19,7 +19,7 @@ overflow: auto;
 position: relative;
 
 ::selection{
-  background: black;
+  background: #1d71b9;
   color: white;
 }
 `
@@ -346,8 +346,7 @@ button{
 
 @media screen and (max-width: 768px){
   text-align: center;
-
-  background: url('Page3Tshirt2.jpg'); 
+  background: url(${process.env.PUBLIC_URL}/Page3Tshirt2.jpg); 
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -417,7 +416,11 @@ width: 100%;
 height: auto;
 background: white;
 
+@media screen and (min-width: 1200px){
+  height: calc(auto - 6rem);
+  padding: 6rem;
 
+}
 
 
 
@@ -743,7 +746,7 @@ export default function HomePage() {
             <img className=' Page3Tshirt1' src={process.env.PUBLIC_URL + '/Page3Tshirt1.avif'} alt="Page3Tshirt1" />
             <p style={{color:"grey" ,fontWeight:'500',paddingTop:'1rem'}}>MEN  WOMEN</p>
             <p style={{fontSize:'1.5rem',fontWeight:'200'}} >Fashion is what you buy, style is what you do with it.</p>
-            <button >Shop Now</button>
+            <button onClick={ClickToShop} >Shop Now</button>
          </div>
 
 

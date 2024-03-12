@@ -3,11 +3,11 @@
         "id": 1,
         "gender": "male",
         "shirt": "Summer Cool Black",
-        "shirtImage": "PopularTshirt1.avif",
+        "shirtImage": "shirt1.jpg",
         "extraImages":[
-            "PopularTshirt1.avif",
-            "PopularTshirt2.avif",
-            "Productdescription1.avif"
+            "shirt1.jpg",
+            "shirt1E1.jpg",
+            "shirt1E2.jpg"
         ],
         "price": "$33.00 - $36.00",
         "category": "popular",
@@ -47,13 +47,13 @@
     {
         "id": 2,
         "gender": "female",
-        "shirt": "Summer Vibes Grey",
+        "shirt": "Summer Vibes white",
         "category": "onsale",
-        "shirtImage": "PopularTshirt2.avif",
+        "shirtImage": "Shirt2.jpeg",
         "extraImages":[
-            "Productdescription1.avif",
-            "Productdescription1.avif",
-            "Productdescription1.avif"
+            "Shirt2.jpeg",
+            "Shirt2E1.jpg",
+            "Shirt2E2.jpg"
         ],
         "price": "$23.00 - $28.00",
         "colors": [
@@ -93,13 +93,13 @@
     {
         "id": 3,
         "gender": "male",
-        "shirt": "Summer Chic White",
+        "shirt": "Summer Chic Light Purple",
         "category": "onsale",
         "shirtImage": "PopularTshirt3.avif",
         "extraImages":[
-            "Productdescription1.avif",
-            "Productdescription1.avif",
-            "Productdescription1.avif"
+            "PopularTshirt3.avif",
+            "Shirt3E1.jpg",
+            "Shirt3E2.jpg"
         ],
         "price": "$21.00 - $25.00",
         "colors": [
@@ -139,11 +139,11 @@
         "id": 4,
         "gender": "female",
         "shirt": "Urban Edge Black",
-        "shirtImage": "PopularTshirt4.jpg",
+        "shirtImage": "Shirt4.jpg",
         "extraImages":[
-            "Productdescription1.avif",
-            "Productdescription1.avif",
-            "Productdescription1.avif"
+            "Shirt4.jpg",
+            "Shirt4E1.jpg",
+            "Shirt4E2.jpg"
         ],
         "price": "$36.00 - $39.00",
         "category": "popular",
@@ -184,11 +184,11 @@
         "id": 5,
         "gender": "female",
         "shirt": "Summer Breeze Grey",
-        "shirtImage": "summergirlpose1.avif",
+        "shirtImage": "Shirt5.jpg",
         "extraImages":[
-            "Productdescription1.avif",
-            "Productdescription1.avif",
-            "Productdescription1.avif"
+            "Shirt5.jpg",
+            "Shirt5E1.jpg",
+            "Shirt5E2.jpg"
         ],
         "price": "$33.00 - $36.00",
         "category": "onsale",
@@ -231,9 +231,9 @@
         "shirt": "Beach Casual White",
         "shirtImage": "summerboypose2.avif",
         "extraImages":[
-            "Productdescription1.avif",
-            "Productdescription1.avif",
-            "Productdescription1.avif"
+            "summerboypose2.avif",
+            "Shirt6E1.avif",
+            "Shirt6E2.jpg"
         ],
         "price": "$23.00 - $28.00",
         "category": "popular",
@@ -276,9 +276,9 @@
         "shirt": "Coastal Charm Black",
         "shirtImage": "summergirlpose3.avif",
         "extraImages":[
-            "Productdescription1.avif",
-            "Productdescription1.avif",
-            "Productdescription1.avif"
+            "summergirlpose3.avif",
+            "Shirt7E2.jpg",
+            "Shirt7E1.jpg"
         ],
         "price": "$21.00 - $25.00",
         "colors": [
@@ -317,19 +317,19 @@
     {
         "id": 8,
         "gender": "male",
-        "shirt": "Street Style Grey",
-        "shirtImage": "summerboypose4.avif",
+        "shirt": "Street Style Red",
+        "shirtImage": "Shirt8.jpg",
         "extraImages":[
-            "Productdescription1.avif",
-            "Productdescription1.avif",
-            "Productdescription1.avif"
+            "Shirt8.jpg",
+            "Shirt8E1.jpg",
+            "Shirt8E2.jpg"
         ],
         "price": "$36.00 - $39.00",
         "category": "onsale",
         "colors": [
-            "black",
-            "grey",
-            "white"
+            "red",
+            "blue",
+            "purple"
         ],
         "size": [
             "XS",
@@ -363,18 +363,18 @@
         "id": 9,
         "gender": "female",
         "shirt": "Trendsetter Black",
-        "shirtImage": "newtshirt1.avif",
+        "shirtImage": "Shirt9.jpg",
         "extraImages":[
-            "Productdescription1.avif",
-            "Productdescription1.avif",
-            "Productdescription1.avif"
+            "Shirt9.jpg",
+            "Shirt9E1.jpg",
+            "Shirt9E2.jpg"
         ],
         "price": "$36.00 - $39.00",
         "category": "popular",
         "colors": [
             "black",
-            "grey",
-            "white"
+            "red",
+            "#808000"
         ],
         "size": [
             "XS",
@@ -408,17 +408,17 @@
         "id": 10,
         "gender": "male",
         "shirt": "Urban Explorer White",
-        "shirtImage": "newtshirt2.jpg",
+        "shirtImage": "Shirt10.jpg",
         "extraImages":[
-            "Productdescription1.avif",
-            "Productdescription1.avif",
-            "Productdescription1.avif"
+            "Shirt10.jpg",
+            "Shirt10E1.avif",
+            "Shirt10E2.jpg"
         ],
         "price": "$36.00 - $39.00",
         "colors": [
-            "black",
-            "grey",
-            "white"
+            "white",
+            "red",
+            "blue"
         ],
         "size": [
             "XS",
@@ -451,16 +451,16 @@
     {
         "id": 11,
         "gender": "female",
-        "shirt": "City Swagger Grey",
-        "shirtImage": "newtshirt3.jpg",
+        "shirt": "City Swagger sandal",
+        "shirtImage": "shirt11.jpg",
         "extraImages":[
-            "Productdescription1.avif",
-            "Productdescription1.avif",
-            "Productdescription1.avif"
+            "shirt11.jpg",
+            "shirt11E1.jpg",
+            "shirt11E2.jpg"
         ],
         "price": "$36.00 - $39.00",
         "colors": [
-            "black","grey",
+            "darkgrey","black",
             "white"
         ],
         "size": [
@@ -497,13 +497,14 @@
         "shirt": "Metro Casual Green",
         "shirtImage": "newtshirt4.avif",
         "extraImages":[
-            "Productdescription1.avif",
-            "Productdescription1.avif",
-            "Productdescription1.avif"
+            "newtshirt4.avif",
+            "shirt12E1.jpg",
+            "shirt12E2.jpg"
+             
         ],
         "price": "$36.00 - $39.00",
         "colors": [
-            "black",
+            "forestgreen",
             "grey",
             "white"
         ],

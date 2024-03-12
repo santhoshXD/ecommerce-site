@@ -256,7 +256,7 @@ const ProductDetails = () => {
 
   const[selectedImage, setSelectedImage] = useState(product.shirtImage)
 
-
+   
 
   return (
     <Wrapper>
@@ -272,7 +272,9 @@ const ProductDetails = () => {
           <div className='extra-images'>
              {
               product.extraImages.map((image,index) =>(
-                <img key={index} src={process.env.PUBLIC_URL + '/' + image}  onClick={() => setSelectedImage(image)} />
+                <img key={index} src={process.env.PUBLIC_URL + '/' + image}  style={{
+                  border: selectedImage === image ? '2px solid orange' : 'none' 
+                }}  onClick={() => setSelectedImage(image)} />
               ))
              }
              <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora veritatis nostrum ducimus ut earum magni alias unde quis dolorem adipisci obcaecati vero blanditiis architecto quod nobis aperiam, inventore eaque sed.</div>

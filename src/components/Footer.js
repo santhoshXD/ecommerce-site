@@ -1,7 +1,7 @@
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faCopyright } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 
@@ -150,6 +150,28 @@ li{
 
 
 export default function Footer() {
+
+    const[emailSub,setEmailSub] = useState('')
+      
+
+
+    const SubscribeEmail = () => {
+        if (emailSub === '') {
+            alert('Enter your email before clicking submit!');
+        } else if (!isValidEmail(emailSub)) {
+            alert('Please enter a valid email!');
+        } else {
+            alert(`Updates will be sent to ${emailSub} Happy Shopping!`);
+            setEmailSub('')
+        }
+    };
+ 
+    const isValidEmail = (email) => {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+
+    
   return (
     <Wrapper >
       <div className="subscribe-box">
@@ -159,8 +181,8 @@ export default function Footer() {
         <p>Join our community! for updates on trends, events, and more.</p>
         </div>
         <div className='footer-input-div'>
-        <input type="text" placeholder='Your email address...' />
-        <button>Subscribe</button>
+        <input type="email" placeholder='Your email address...' value={emailSub} onChange={(e) => setEmailSub(e.target.value)} />
+        <button onClick={SubscribeEmail}>Subscribe</button>
         </div>
         <ul className='footer-about'>
             <li><a href="/shop">Buy T-shirts</a></li>
