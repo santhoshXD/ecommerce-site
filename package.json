@@ -2,7 +2,7 @@
   "name": "ecommerce-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://santhoshXD.github.io/login",
+  "homepage": "https://santhoshXD.github.io/ecommerce-site/login",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
