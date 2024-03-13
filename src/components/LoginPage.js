@@ -170,7 +170,7 @@ export default function LoginPage() {
             if (username !== 'santhosh123@gmail.com' || userPassword !== 'santhosh123') {
                 setError('*Please enter correct username and password*');
             } else {
-                Navigate('/');
+                Navigate('/home');
                 localStorage.setItem('username', username)
                 localStorage.setItem('userpassword', userPassword)
             }
@@ -180,7 +180,7 @@ export default function LoginPage() {
 
     function handleKeyPress(event){
        if(event.key === 'Enter'){
-        Navigate('/')
+        Navigate('/home')
        }
     }
 

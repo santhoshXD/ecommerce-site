@@ -66,14 +66,14 @@ function App() {
   <CartContext.Provider value={{cart,AddToCart}} >
   <BrowserRouter>
   <Routes>
-  <Route path="/" element={<HomePage />} />
+  <Route path="/home" element={<HomePage />} />
   <Route path="/shop" element={<BuyTshirts />} />
   <Route path="/women-tshirts" element={<WomenTshirts />} />
   <Route path="/men-tshirts" element={<MenTshirt />} />
   <Route path="/about" element={<About />} />
   <Route path="/contact" element={<Contact />} />
   <Route path="/shop/product/:id" element={<ProductDetails />} />
-  <Route path="/login" element={<LoginPage/>}/>
+  <Route path="/" element={<LoginPage/>}/>
   </Routes>
   </BrowserRouter>
   </CartContext.Provider>
