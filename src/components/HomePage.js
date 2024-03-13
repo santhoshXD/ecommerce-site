@@ -351,9 +351,10 @@ button{
 
 @media screen and (max-width: 768px){
   text-align: center;
-  background: url(${process.env.PUBLIC_URL}/Page3Tshirt2.jpg); 
+  background: url(${process.env.PUBLIC_URL}/CollectionMobile.avif); 
     background-size: contain;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 
@@ -570,6 +571,8 @@ place-content: center;
 place-items: center;
 transition:all 0.3s ease;
 
+ 
+
  @media screen and (max-width: 860px){
   grid-template-columns: 1fr;
   display: grid;
@@ -622,22 +625,16 @@ height: 50px;
 text-align: center;
 cursor: pointer;
 
-.mp,.wmp{
-  color: grey;
-
-  &:hover{
-    color: grey;
-  }
-}
+ 
 }
 
 `
 const StyledLink = styled(Link)`
 text-decoration: none;
-color: black;
+color: darkgray;
 
 &:hover{
-  color: grey;
+  color: black;
   text-decoration: none;
 }
 `

@@ -525,7 +525,7 @@ export default function Header() {
 
     const openCart = () => {
         setIsCartOpen(true)
-        console.log("cart is clicked")
+         
     }
 
     const closeCart = () => {

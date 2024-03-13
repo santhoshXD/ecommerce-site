@@ -8,7 +8,7 @@ import Contact from "./components/Contact";
 import ProductDetails from "./components/ProductDetails";
 import LoginPage from "./components/LoginPage";
 import { createGlobalStyle } from "styled-components";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -24,18 +24,19 @@ const GlobalStyle = createGlobalStyle`
 
  
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;  
+  background: white;  
 }
 
  
 ::-webkit-scrollbar-thumb {
-  background: #1d71b9;  
+  background: lightgrey;  
   border-radius: 6px; 
 }
 
  
 ::-webkit-scrollbar-thumb:hover {
-  background: #145585;  
+  background: darkgrey;  
+  cursor: pointer;
 }
 
 
@@ -48,11 +49,15 @@ const CartContext = createContext()
 
 function App() {
 
+  
+
   const [cart,setCart] = useState([])
 
   const AddToCart = (items) =>{
     setCart([...cart,items])
   }
+
+  
 
 
   return (

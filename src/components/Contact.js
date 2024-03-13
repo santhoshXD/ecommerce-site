@@ -12,25 +12,7 @@ height: 100vh;
 overflow-y: scroll;
 
    
-::-webkit-scrollbar {
-  width: 12px;  
-}
 
- 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;  
-}
-
- 
-::-webkit-scrollbar-thumb {
-  background: #1d71b9;  
-  border-radius: 2px; 
-}
-
- 
-::-webkit-scrollbar-thumb:hover {
-  background: #145585;  
-}
 
 `
 
@@ -202,10 +184,10 @@ function Contact() {
         <div className="about-form-div">
           <div className ="get-in-touch">
             <h2>Get in Touch</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id leo tempor, congue justo at, lobortis orci.</p>
-            <p><FontAwesomeIcon icon={faMapMarkedAlt} /> 123 Fifth Avenue, New York, NY 10160</p>
+            <p>Feel free to reach out to us using the contact information below.</p>
+            <p><FontAwesomeIcon icon={faMapMarkedAlt} /> 123 Fifth Avenue, HiTech City,Hyderabad</p>
             <p><FontAwesomeIcon icon={faEnvelope} /> <a href="mailto:contact@info.com">contact@info.com</a></p>
-            <p><FontAwesomeIcon icon={faPhone} /> 9-334-7565-9787</p>
+            <p><FontAwesomeIcon icon={faPhone} />+1-234-5678</p>
           </div>
           <div className="about-form">
              <form onSubmit={handleSubmitForm} >

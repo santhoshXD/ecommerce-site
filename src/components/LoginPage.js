@@ -102,7 +102,7 @@ gap: 1rem;
 @media screen and (max-width: 768px){
 height: 100%;
 width: 100%;
-background: linear-gradient(to right, #1d71b9 0%, #e5e5e5 50%, white 50%, white 100%);
+background: radial-gradient(circle at right top, #1d71b9 20%, white 20%);
  
 
 .input-login{
@@ -197,7 +197,7 @@ export default function LoginPage() {
             </ShoppingImage>
 
             <LoginForm>
-                <h3>Welcome to Tshirt Classic!</h3>
+                <h3 style={{color:'#1d71b9'}}>Welcome to Tshirt Classic!</h3>
                 <p>Discover Your Style, Shop with Smiles!</p>
 
 

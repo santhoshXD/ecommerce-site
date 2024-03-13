@@ -13,24 +13,25 @@ const Wrapper = styled.div`
   overflow-y: scroll;
 
    
-::-webkit-scrollbar {
+  ::-webkit-scrollbar {
   width: 12px;  
 }
 
  
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;  
+  background: white;  
 }
 
  
 ::-webkit-scrollbar-thumb {
-  background: #1d71b9;  
-  border-radius: 2px; 
+  background: lightgrey;  
+  border-radius: 6px; 
 }
 
  
 ::-webkit-scrollbar-thumb:hover {
-  background: #145585;  
+  background: darkgrey;  
+  cursor: pointer;
 }
 
   `
@@ -280,7 +281,7 @@ const ProductDetails = () => {
 
   const handleAddToCart = () => {
     AddToCart(product);
-    alert("Item added to cart!");
+    alert("Item added to cart, Please check it in Cart!");
   };
 
 
