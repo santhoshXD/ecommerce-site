@@ -4,7 +4,7 @@ import Header from './Header'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faMapMarkedAlt, faPhone } from '@fortawesome/free-solid-svg-icons'
 import Footer from './Footer'
-
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 const Wrapper = styled.div`
 width: 100%;
@@ -152,11 +152,10 @@ width: 10%;
 
 `
 
-const TamilNaduMap = styled.div`
-width: 100%;
-height: 70vh;
-
-`
+const StyledMapContainer = styled.div`
+  width: 100%;
+  height: 70vh;
+`;
 
 
 function Contact() {
@@ -225,11 +224,18 @@ function Contact() {
 
       </ContactContent>
       
+      <StyledMapContainer>
+      <iframe
+        title="Google Maps"
+        width="100%"
+        height="100%"
+        frameBorder="0"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.34203530906!2d78.2432323956461!3d17.41228101562799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1710322224166!5m2!1sen!2sin"
+        allowFullScreen
+      ></iframe>
 
-      <TamilNaduMap>
-
-    
-    </TamilNaduMap>
+      
+    </StyledMapContainer>
 
     <Footer />
     
