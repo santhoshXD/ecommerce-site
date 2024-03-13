@@ -214,7 +214,7 @@ const WomenTshirts = () => {
      <Header/>
      <div className="Home-women">
           <div className='h-s'>
-           <StyledLinkShop to={"/"} >Home</StyledLinkShop>
+           <StyledLinkShop to={"/home"} >Home</StyledLinkShop>
            <p>/Women</p>
           </div>
 
