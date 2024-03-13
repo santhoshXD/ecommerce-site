@@ -43,12 +43,12 @@
         {
             "id":1,
             "items":"LogIn",
-            "link": "/login"
+            "link": "/"
         },
         {
             "id":2,
             "items":"Home",
-            "link": "/"
+            "link": "/home"
         },
         {
             "id":3,

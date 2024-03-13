@@ -515,7 +515,7 @@ export default function Header() {
     const Navigate = useNavigate()
 
     const LinkToLoginPage = () => {
-        Navigate('/login')
+        Navigate('/')
     }
 
 
