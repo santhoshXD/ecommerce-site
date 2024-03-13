@@ -2,7 +2,7 @@
     {
         "id": 1,
         "gender": "male",
-        "shirt": "Summer Cool Black",
+        "shirt": "Casual Cool Black",
         "shirtImage": "shirt1.jpg",
         "extraImages":[
             "shirt1.jpg",
@@ -10,7 +10,7 @@
             "shirt1E2.jpg"
         ],
         "price": "$33.00 - $36.00",
-        "category": "popular",
+        
         "colors": [
             "black",
             "grey",
@@ -52,8 +52,8 @@
         "shirtImage": "Shirt2.jpeg",
         "extraImages":[
             "Shirt2.jpeg",
-            "Shirt2E1.jpg",
-            "Shirt2E2.jpg"
+            "Shirt2.avif",
+            "Shirt2E1.avif"
         ],
         "price": "$23.00 - $28.00",
         "colors": [
@@ -93,7 +93,7 @@
     {
         "id": 3,
         "gender": "male",
-        "shirt": "Summer Chic Light Purple",
+        "shirt": "Chic Light Purple",
         "category": "onsale",
         "shirtImage": "PopularTshirt3.avif",
         "extraImages":[
@@ -139,14 +139,14 @@
         "id": 4,
         "gender": "female",
         "shirt": "Urban Edge Black",
-        "shirtImage": "Shirt4.jpg",
+        "shirtImage": "Shirt4.avif",
         "extraImages":[
-            "Shirt4.jpg",
-            "Shirt4E1.jpg",
-            "Shirt4E2.jpg"
+            "Shirt4.avif",
+            "Shirt4E1.avif",
+            "Shirt4E2.avif"
         ],
         "price": "$36.00 - $39.00",
-        "category": "popular",
+   
         "colors": [
             "black",
             "grey",
@@ -187,8 +187,8 @@
         "shirtImage": "Shirt5.jpg",
         "extraImages":[
             "Shirt5.jpg",
-            "Shirt5E1.jpg",
-            "Shirt5E2.jpg"
+            "Shirt5E2.jpg",
+            "Shirt5E1.jpg"
         ],
         "price": "$33.00 - $36.00",
         "category": "onsale",
@@ -317,7 +317,7 @@
     {
         "id": 8,
         "gender": "male",
-        "shirt": "Street Style Red",
+        "shirt": "Street Style Maroon",
         "shirtImage": "Shirt8.jpg",
         "extraImages":[
             "Shirt8.jpg",
@@ -327,9 +327,9 @@
         "price": "$36.00 - $39.00",
         "category": "onsale",
         "colors": [
-            "red",
-            "blue",
-            "purple"
+            "black",
+            "grey",
+            "white"
         ],
         "size": [
             "XS",
@@ -363,18 +363,18 @@
         "id": 9,
         "gender": "female",
         "shirt": "Trendsetter Black",
-        "shirtImage": "Shirt9.jpg",
+        "shirtImage": "Shirt9E2.avif",
         "extraImages":[
-            "Shirt9.jpg",
+            "Shirt9E2.avif",
             "Shirt9E1.jpg",
-            "Shirt9E2.jpg"
+            "Shirt9.avif"
         ],
         "price": "$36.00 - $39.00",
         "category": "popular",
         "colors": [
             "black",
-            "red",
-            "#808000"
+            "grey",
+            "white"
         ],
         "size": [
             "XS",
@@ -416,9 +416,9 @@
         ],
         "price": "$36.00 - $39.00",
         "colors": [
-            "white",
-            "red",
-            "blue"
+            "black",
+            "grey",
+            "white"
         ],
         "size": [
             "XS",
@@ -451,16 +451,16 @@
     {
         "id": 11,
         "gender": "female",
-        "shirt": "City Swagger sandal",
-        "shirtImage": "shirt11.jpg",
+        "shirt": "Stylish Pale Yellow",
+        "shirtImage": "shirt11E1.avif",
         "extraImages":[
+            "shirt11E1.avif",
             "shirt11.jpg",
-            "shirt11E1.jpg",
             "shirt11E2.jpg"
         ],
         "price": "$36.00 - $39.00",
         "colors": [
-            "darkgrey","black",
+            "black","grey",
             "white"
         ],
         "size": [
@@ -470,6 +470,7 @@
             "L",
             "XL"
         ],
+        "category": "popular",
         "description": "Exude city swagger with our chic grey t-shirt. Effortlessly cool for navigating urban streets.",
         "shipping": "free shipping",
         "gcategory": "women",
@@ -496,6 +497,7 @@
         "gender": "male",
         "shirt": "Metro Casual Green",
         "shirtImage": "newtshirt4.avif",
+        "category": "popular",
         "extraImages":[
             "newtshirt4.avif",
             "shirt12E1.jpg",
@@ -504,7 +506,7 @@
         ],
         "price": "$36.00 - $39.00",
         "colors": [
-            "forestgreen",
+            "black",
             "grey",
             "white"
         ],

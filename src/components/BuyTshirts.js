@@ -10,6 +10,29 @@ import Footer from './Footer'
 const Wrapper = styled.div`
 width: 100%;
 height: 100vh;
+overflow-y: scroll;
+
+   
+::-webkit-scrollbar {
+  width: 12px;  
+}
+
+ 
+::-webkit-scrollbar-track {
+  background: #f1f1f1;  
+}
+
+ 
+::-webkit-scrollbar-thumb {
+  background: #1d71b9;  
+  border-radius: 2px; 
+}
+
+ 
+::-webkit-scrollbar-thumb:hover {
+  background: #145585;  
+}
+
 
 
 .title-page{

@@ -4,11 +4,35 @@ import shop from '../JSON/shop.json';
 import { Link, useParams } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import { useCart } from '../App';
 
 
 const Wrapper = styled.div`
   height: 100vh;
   width: 100%;
+  overflow-y: scroll;
+
+   
+::-webkit-scrollbar {
+  width: 12px;  
+}
+
+ 
+::-webkit-scrollbar-track {
+  background: #f1f1f1;  
+}
+
+ 
+::-webkit-scrollbar-thumb {
+  background: #1d71b9;  
+  border-radius: 2px; 
+}
+
+ 
+::-webkit-scrollbar-thumb:hover {
+  background: #145585;  
+}
+
   `
 
 const Description = styled.div`
@@ -173,7 +197,7 @@ const Description = styled.div`
       color: white;
       border: none;
       outline: none;
-      cursor: not-allowed;
+      cursor: pointer;
     }
   }
 
@@ -239,11 +263,12 @@ const ProductDetails = () => {
 
   const [count, setCount] = useState(0)
 
+  const {AddToCart} = useCart()
+
   const { id } = useParams();
 
   const product = shop.find((item) => item.id === parseInt(id));
-  console.log(product.shirtImage)
-  console.log(shop)
+  
 
   const getCategoryMenWomen = (gender) => {
     if (gender.toLowerCase() === 'men') {
@@ -253,9 +278,14 @@ const ProductDetails = () => {
     }
   };
 
+  const handleAddToCart = () => {
+    AddToCart(product);
+    alert("Item added to cart!");
+  };
+
 
   const[selectedImage, setSelectedImage] = useState(product.shirtImage)
-
+ 
    
 
   return (
@@ -312,7 +342,7 @@ const ProductDetails = () => {
             </div>
 
             <div>
-              <button >Add to cart</button>
+              <button onClick={handleAddToCart}  >Add to cart</button>
             </div>
 
           </div>

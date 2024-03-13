@@ -5,6 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faCartShopping, faClose, faSearch, faSignOut } from '@fortawesome/free-solid-svg-icons'
 import { Link, useNavigate } from 'react-router-dom'
 import shirts from '../JSON/shop.json'
+import { useCart } from '../App'
+
+
+
 
 const { menu1, menu2, mobilemenu1 } = data
 
@@ -18,7 +22,7 @@ cursor: pointer;
         position: relative;
 
         &:hover {
-            color: grey;
+            color: #1d71b9;
         }
 
         &:hover::after {
@@ -27,7 +31,7 @@ cursor: pointer;
             bottom: -26px; 
             width: 100%;
             height: 2px;
-            background-color: grey;
+            background-color: #1d71b9;
             transition: width 0.3s ease; 
         }
         
@@ -48,12 +52,12 @@ cursor: pointer;
 
 &:hover{
     text-decoration: none;
-    color: grey;
+    color: #1d71b9;
     transition: all 0.3s ease;
 }
 
 &.active-link{
-    color: grey;
+    color: #1d71b9 ;
     border: 2px solid grey;
 }
 
@@ -67,7 +71,7 @@ display: flex;
 justify-content: space-around;
 text-transform: uppercase;
 position: relative;
-/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+ 
 
 
 
@@ -203,8 +207,10 @@ const MobileMenu = styled.div`
 
 const StyLedLinkMobile = styled(Link)`
 height: 3rem;
-        background: pink;
-        border-bottom: 1px solid orange;
+        background: #1d71b9;
+        color: white;
+        border-bottom: 1px solid white;
+        border-right: 1px solid white;
         display: flex;
         align-items: center;
         padding-left: 1rem;
@@ -235,7 +241,7 @@ position: absolute;
 top: 0;
   right: ${props => props.isCartOpen ? '0' : '-300px'};
   background: white;
-  width: 25%;
+  width: 25vw;
   height: 100vh;
   transition: all 0.3s ease;
   border-left: 2px solid lightgray;
@@ -259,10 +265,47 @@ top: 0;
 
 .cart-items{
  height: 80%;
- display: flex;
- justify-content: center;
- align-items: center;
+ width: 100%;
+
  text-transform: capitalize;
+ gap: 2rem;
+ 
+ div{
+     display: flex;  
+    align-items: center;
+    cursor: pointer;
+   width: 100%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  
+   
+ }
+
+ img{
+    height: 70px;
+    width: 70px;
+
+ }
+
+
+ .cart-shirt-price{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    p{
+        padding: 0;
+        margin: 0;
+    }
+ 
+ }
+
+ .no-products-found{
+    color: #1d71b9;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+ }
 
 }
 
@@ -431,6 +474,8 @@ const SearchContainer = styled.div`
    
   }
 
+ 
+
   
 
 
@@ -447,12 +492,12 @@ color: black;
   text-decoration: none;
   color: black;
 }
-
-
 `
 
 
 export default function Header() {
+
+    const { cart } = useCart()
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -556,7 +601,7 @@ export default function Header() {
                 {
                     menu2.map((items, index) => (
 
-                        <FontAwesomeIcon key={index} className={items.id === 1 ? 'search-icon' : 'cart-icon'} icon={items.id === 1 ? faSearch : faCartShopping}
+                        <FontAwesomeIcon key={index} className={items.id === 1 ? 'search-icon' : 'cart-icon'} icon={items.id === 1 ? faSearch : faCartShopping} title={items.id !== 1 ? `Cart (${cart.length})` : undefined}
                             onClick={() => {
                                 if (items.id === 2) {
                                     openCart();
@@ -568,6 +613,8 @@ export default function Header() {
 
                     ))
                 }
+            
+                
                 {
                     loggedIn ? (
                         <div onClick={handleProfileSelect} className='profile-log' >
@@ -596,8 +643,28 @@ export default function Header() {
 
 
                     <div className="cart-items">
-                        <div>No Products in the cart</div>
+                        {cart.length === 0 ? (
+                            <div className='no-products-found'>No Products in the cart</div>
+                        ) : (
+                            cart.map((item, index) => (
+                                <StyledNavigateLink2 key={index} to={`/shop/product/${item.id}`} >
+                                    
+
+                                            <div key={index}>
+                                                <img src={process.env.PUBLIC_URL + '/' + item.shirtImage} alt={item.shirt} />
+                                                <div className='cart-shirt-price'>
+                                                    <p>{item.shirt}</p>
+                                                    <p>{item.price}</p>
+                                                </div>
+
+                                            </div>
+                                    
+                                </StyledNavigateLink2>
+
+                            ))
+                        )}
                     </div>
+
 
 
                     <div className="cart-shopping">
@@ -653,26 +720,26 @@ export default function Header() {
                         <div className="shirt-sorting-container">
                             <div className="shirt-sorting">
 
-                            {SearchedShirts.length > 0 ? (
-                                SearchedShirts.map((shirt, index) => (
-                                    <StyledNavigateLink2 key={index} to={`/shop/product/${shirt.id}`} >
-                                        <div key={index}>
-                                            <img style={{ height: '100px', width: '100px' }} src={process.env.PUBLIC_URL + '/' + shirt.shirtImage} alt={shirt.name} />
-                                            <p className='shop-tshirt-gender'>{shirt.gender}</p>
-                                            <h4 className='shop-tshirt-name'>{shirt.shirt}</h4>
-                                            <p className='shop-tshirt-price'>{shirt.price}</p>
-                                        </div>
-                                    </StyledNavigateLink2>
-                                ))
+                                {SearchedShirts.length > 0 ? (
+                                    SearchedShirts.map((shirt, index) => (
+                                        <StyledNavigateLink2 key={index} to={`/shop/product/${shirt.id}`} >
+                                            <div key={index}>
+                                                <img style={{ height: '100px', width: '100px' }} src={process.env.PUBLIC_URL + '/' + shirt.shirtImage} alt={shirt.name} />
+                                                <p className='shop-tshirt-gender'>{shirt.gender}</p>
+                                                <h4 className='shop-tshirt-name'>{shirt.shirt}</h4>
+                                                <p className='shop-tshirt-price'>{shirt.price}</p>
+                                            </div>
+                                        </StyledNavigateLink2>
+                                    ))
                                 ) : (
-                                    
-                                    <div style={{ textAlign:'center',color:'#1d71b9',fontWeight:'600' }}>No items found</div>
-                                     
-                                    )}
-                                    </div>
+
+                                    <div style={{ textAlign: 'center', color: '#1d71b9', fontWeight: '600' }}>No items found</div>
+
+                                )}
+                            </div>
                         </div>
                     ) : (
-                        <p style={{color:'#1d71b9',fontSize:'1.5rem',textTransform:'capitalize'}}>Search whatever you want🤯.   .   .</p>
+                        <p style={{ color: '#1d71b9', fontSize: '1.5rem', textTransform: 'capitalize' }}>Search whatever you want🤯.   .   .</p>
                     )}
 
 

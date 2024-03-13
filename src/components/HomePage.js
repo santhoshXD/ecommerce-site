@@ -15,13 +15,18 @@ import Allshirts from '../JSON/shop.json'
 const Wrapper = styled.div`
 width: 100vw;
 height: 100vh;
-overflow: auto;
+overflow-y:scroll ;
 position: relative;
 
 ::selection{
   background: #1d71b9;
   color: white;
 }
+
+
+
+
+
 `
 
 const Background = styled.div`
@@ -92,7 +97,7 @@ box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
   display: grid;
   grid-template-columns: 1fr;
   text-align: justify;
-  background: radial-gradient(circle at 50% 50%, #1d71b9 43%, white 43%);
+  background: radial-gradient(circle at 10% 70%, #1d71b9 43%, white 43%);
 }
 `
 
@@ -583,7 +588,7 @@ transition:all 0.3s ease;
 
 .men-pro-img{
   width: 400px;
-  height: auto;
+  height: 600px;
   cursor: pointer;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
  @media screen and (max-width: 768px){
@@ -595,7 +600,7 @@ transition:all 0.3s ease;
 
 .women-pro-img{
   width: 400px;
-  height: auto;
+  height: 600px;
   cursor: pointer;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
  @media screen and (max-width: 768px){
