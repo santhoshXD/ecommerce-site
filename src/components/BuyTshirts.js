@@ -230,7 +230,7 @@ const BuyTshirts = () => {
         <Header/>
         <div className="Home-shop">
           <div className='h-s'>
-           <StyledLinkShop to={"/"} >Home</StyledLinkShop>
+           <StyledLinkShop to={"/home"} >Home</StyledLinkShop>
            <p>/shop</p>
           </div>
 
