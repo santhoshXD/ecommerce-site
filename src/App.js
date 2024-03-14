@@ -47,6 +47,10 @@ const GlobalStyle = createGlobalStyle`
 `
 const CartContext = createContext()
 
+export function useCart(){
+  return useContext(CartContext)
+}
+
 function App() {
 
   
@@ -56,6 +60,7 @@ function App() {
   const AddToCart = (items) =>{
     setCart([...cart,items])
   }
+
 
   
 
@@ -84,6 +89,3 @@ function App() {
 export default App;
 
 
-export function useCart(){
-  return useContext(CartContext)
-}
